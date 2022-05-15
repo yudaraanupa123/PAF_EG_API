@@ -67,12 +67,16 @@ public class Payment {
 	 if (con == null) 
 	 {return "Error while connecting to the database for reading."; } 
 	 // Prepare the html table to be displayed
-	 output = "<table border='1'><tr><th>Account No</th>" +
+	 output = "<table class='table' border='1'>" +
+	 "<thead>" +
+	 "<tr>"  +
+	 "<th>Account No</th>" +
 	 "<th>Card Number</th>" + 
 	 "<th>Expiry Date</th>" +
 	 "<th>CCV</th>"+
 	 "<th>TelNo</th>"+
-	 "<th>Update</th><th>Remove</th></tr>"; 
+	 "<th>Update</th>"+
+	 "<th>Remove</th></tr></thead>"; 
 	 
 	 String query = "select * from payment"; 
 	 Statement stmt = con.createStatement(); 
@@ -157,7 +161,7 @@ public class Payment {
 	 if (con == null) 
 	 {return "Error while connecting to the database for deleting."; } 
 	 // create a prepared statement
-	 String query = "delete from payment where PaymentId=?"; 
+	 String query = "delete from  payment where PaymentId=?"; 
 	 PreparedStatement preparedStmt = con.prepareStatement(query); 
 	 // binding values
 	 preparedStmt.setInt(1, Integer.parseInt(PaymentId)); 
@@ -165,7 +169,7 @@ public class Payment {
 	 preparedStmt.execute(); 
 	 con.close(); 
 	 String newPay = readPayment();
-		output = "{\"status\":\"success\", \"data\": \"" + newPay + "\"}";
+		output = "{\"status\":\"success\", \"data\": \"" +  newPay + "\"}";
 	// output = "Deleted successfully"; 
 	 } 
 	 catch (Exception e) 
