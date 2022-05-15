@@ -6,6 +6,71 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>ElectroGrid Online System</title>
+<style type="text/css">
+
+
+
+}
+
+*{
+margin:0 ;
+padding: 0;
+box-sizing: border-box;
+}
+.body{
+background-color: white;
+font-family: sans-serif;
+}
+.table-container{
+padding: 0 10%;
+margin: 40px auto 0;
+}
+.heading{
+font-size: 40px;
+text-align: center;
+color: #f1f1f1;
+margin-bottom: 40px;
+}
+.table{
+width: 100%;
+border-collapse: collapse;
+margin-top: 50px;
+}
+.table thead{
+background-color: black;
+}
+.table thead tr th{
+font-size: 14px;
+font-weight: 600;
+letter-spacing: 0.35px;
+color: #ffff;
+opacity: 1;
+padding: 12px;
+vertical-align: top;
+border: 1px solid #dee2e685;
+
+
+
+}
+.table tbody tr td{
+font-size: 14px;
+font-weight: normal;
+letter-spacing: 0.35px;
+
+background-color: silver;
+padding: 8px;
+text-align: center;
+border:1px solid #dee2e685;
+}
+
+
+
+#btn-record{
+margin-left: 85%;
+}
+</style>
+
+
 <link rel="stylesheet" href="Views/bootstrap.min.css">
 <script src="Components/jquery-3.2.1.min.js"></script>
 <script src="Components/payment.js"></script>
@@ -31,7 +96,7 @@
 			<br>
 			
 		    <label>Card Number</label> <input id="CardNum"
-			name="CardNum" type="text"
+			name="CardNum" type="number"
 		    class="form-control form-control-sm">
 			<br>
 			
@@ -41,12 +106,12 @@
 			<br>
 			
 			<label>CCV</label> <input id="CCV"
-			name="CCV" type="text"
+			name="CCV" type="number"
 		    class="form-control form-control-sm">
 			<br>
 			
 			<label>Telephone Number</label> <input id="TelNo"
-			name="TelNo" type="text"
+			name="TelNo" type="number"
 		    class="form-control form-control-sm">
 			<br>
 
